@@ -1,4 +1,4 @@
-// simple JWT localStorage helper
+// token helpers
 const TOKEN_KEY = 'skimly_token'
 
 export function saveToken(token) {
@@ -17,7 +17,6 @@ export function isAuthenticated() {
   return !!getToken()
 }
 
-// decode JWT payload without verification to read basic data (not secure, only UI)
 export function decodeTokenPayload(token) {
   try {
     const parts = token.split('.')

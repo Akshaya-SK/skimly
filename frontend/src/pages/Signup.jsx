@@ -27,14 +27,14 @@ export default function Signup() {
 
   return (
     <div className="max-w-md mx-auto">
-      <div className="card">
+      <div className="bg-white shadow rounded-lg p-6">
         <h2 className="text-2xl font-semibold mb-4">Create account</h2>
         <form onSubmit={handleSubmit} className="space-y-3">
           <input value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="Email" className="w-full p-2 border rounded" />
           <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Password" className="w-full p-2 border rounded" />
           {error && <p className="text-sm text-red-500">{error}</p>}
           <div className="flex justify-between items-center">
-            <button type="submit" className="btn-primary">Sign up</button>
+            <button type="submit" className="px-4 py-2 rounded bg-yellow-400 text-slate-800">Sign up</button>
           </div>
         </form>
       </div>

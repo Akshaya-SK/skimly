@@ -7,6 +7,13 @@ from .auth import auth_bp
 from .routes.articles import articles_bp
 import nltk
 
+app = Flask(__name__)
+CORS(app)
+
+@app.route("/")
+def home():
+    return {"message": "Backend is running "}
+
 def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)

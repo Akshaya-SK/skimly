@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Small theme helper classes */
+:root{
+  --skimly-yellow: #FFD166;
+  --skimly-blue: #2B6CB0;
+  --skimly-light: #F8FAFC;
+}
+
+body {
+  @apply bg-white text-gray-800;
+}

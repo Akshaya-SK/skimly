@@ -20,7 +20,7 @@ export default function History() {
     setLoading(false)
   }
 
-  useEffect(() => { search() }, []) // initial fetch
+  useEffect(() => { search() }, [])
 
   async function handleDelete(id) {
     if (!confirm('Delete this summary?')) return
@@ -36,21 +36,15 @@ export default function History() {
     <div>
       <h2 className="text-2xl font-semibold mb-4">Search History</h2>
 
-      <div className="card mb-4">
+      <div className="bg-white shadow rounded-lg p-4 mb-4">
         <div className="flex gap-3">
           <input placeholder="Search topic or text" value={q} onChange={(e)=>setQ(e.target.value)} className="flex-1 p-2 border rounded" />
           <input type="date" value={date} onChange={(e)=>setDate(e.target.value)} className="p-2 border rounded" />
-          <button onClick={search} className="btn-primary">Search</button>
+          <button onClick={search} className="px-4 py-2 rounded bg-skimly-blue text-white" style={{backgroundColor:'var(--skimly-blue)'}}>Search</button>
         </div>
       </div>
 
-      {loading ? <div>Loading…</div> : null}
-
-      {articles.length === 0 && !loading ? <EmptyState title="No matching summaries" hint="Try a different keyword or date" /> : (
-        <div>
-          {articles.map(a => <PdfCard key={a.id} article={a} onDelete={handleDelete} />)}
-        </div>
-      )}
+      {loading ? <div>Loading…</div> : (articles.length === 0 ? <EmptyState title="No matching summaries" hint="Try a different keyword or date" /> : articles.map(a => <PdfCard key={a.id} article={a} onDelete={handleDelete} />))}
     </div>
   )
 }

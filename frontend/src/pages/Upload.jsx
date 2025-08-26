@@ -31,12 +31,12 @@ export default function Upload() {
 
   return (
     <div className="max-w-2xl mx-auto">
-      <div className="card">
+      <div className="bg-white shadow rounded-lg p-6">
         <h2 className="text-xl font-semibold mb-3">Upload PDF</h2>
         <form onSubmit={handleSubmit} className="space-y-3">
           <input type="file" accept="application/pdf" onChange={(e) => setFile(e.target.files?.[0])} />
           <div className="flex gap-3">
-            <button type="submit" className="btn-primary" disabled={processing}>
+            <button type="submit" disabled={processing} className="px-4 py-2 rounded bg-skimly-blue text-white" style={{backgroundColor:'var(--skimly-blue)'}}>
               {processing ? 'Processing…' : 'Upload & Summarize'}
             </button>
           </div>

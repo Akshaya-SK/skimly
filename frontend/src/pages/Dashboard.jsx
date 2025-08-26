@@ -38,15 +38,7 @@ export default function Dashboard() {
   return (
     <div>
       <h2 className="text-2xl font-semibold mb-4">Your Summaries</h2>
-      {articles.length === 0 ? (
-        <EmptyState />
-      ) : (
-        <div>
-          {articles.map((a) => (
-            <PdfCard key={a.id} article={a} onDelete={handleDelete} />
-          ))}
-        </div>
-      )}
+      {articles.length === 0 ? <EmptyState /> : articles.map(a => <PdfCard key={a.id} article={a} onDelete={handleDelete} />)}
     </div>
   )
 }
