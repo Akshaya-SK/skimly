@@ -1,79 +1,108 @@
-# Skimly - AI PDF Summarizer
+# 📚 Skimly
 
-Skimly is a web application that allows users to upload PDFs and get instant AI-generated summaries. It provides a secure login system, stores your upload history, and helps you stay productive by condensing lengthy documents in seconds.
+_A lightweight AI-powered tool to summarize, store, and manage articles & PDFs._
 
-## Features
+---
 
-Fast AI Summaries – Get concise, accurate summaries from any PDF.
+## 🚀 Features
+- 🔐 User authentication (Sign up / Login)
+- 📑 Upload & summarize articles/PDFs
+- 🗂️ Personal dashboard to view summaries
+- 🔍 Keyword extraction for quick insights
+- 🌐 Deployed backend + frontend
 
-Secure Authentication – Sign up, login, and protect your files.
+---
 
-Upload History – Access your past uploads anytime.
+## 🛠️ Tech Stack
+**Frontend:** React, VanillaCSS  
+**Backend:** Flask, SQLAlchemy  
+**Database:** SQLite / PostgreSQL (switchable)  
+**Deployment:** Vercel / Render  
 
-Responsive Design – Works smoothly on desktop and mobile.
+---
 
-## Tech Stack
+## 📸 Screenshots
 
-Frontend: React, Bootstrap, AOS (Animate on Scroll), Lucide Icons
+### 🔐 Authentication
 
-Backend: Python, Flask, JWT Authentication
 
-Database: SQLite/PostgreSQL (your choice in backend)
+### 📑 Dashboard
 
-API Requests: Axios
 
-## Installation
+### 📄 Article Summaries
 
-### Clone the repository:
+
+---
+
+## ⚙️ Installation
+
+### 1. Clone repo
 ```bash
 git clone https://github.com/your-username/skimly.git
 cd skimly
 ```
 
-### Setup Backend:
-
+### 2. Backend Setup
 ```bash
 cd backend
 python -m venv .venv
-source .venv/bin/activate   # On Windows: .venv\Scripts\activate
+.venv\Scripts\activate   # On Windows
+source .venv/bin/activate  # On Mac/Linux
+
 pip install -r requirements.txt
-python -m backend.app
+
+# Run Flask app
+flask --app app run
 ```
 
-### Setup Frontend:
-
+### 3. Frontend Setup
 ```bash
 cd frontend
 npm install
-npm start
+npm run dev
 ```
 
-The frontend will run on http://localhost:3000
-the backend on http://localhost:5000
+---
+
+## 🧪 API Routes
+
+### Health Check
+```
+GET /ping
+```
+
+### Create User
+```
+POST /api/users
+{
+  "email": "test@example.com",
+  "password": "123456"
+}
+```
+
+### Create Article
+```
+POST /api/articles
+{
+  "email": "test@example.com",
+  "title": "AI Revolution",
+  "summary": "AI is changing the world...",
+  "keywords": ["AI", "tech", "future"]
+}
+```
 
 
-### Usage
 
-Open the app in your browser.
 
-Sign up / login to create an account.
 
-Click Upload PDF in your account page or homepage (if logged in).
+## 📌 Roadmap
+- [ ] User profile page  
+- [ ] Advanced search filters  
+- [ ] Export summaries to PDF  
+- [ ] Team collaboration  
 
-Add a title (optional) and select a PDF file to upload.
 
-View your PDF summaries and history in My Account.
 
-#### Authentication
-
-Protected routes are available only for logged-in users.
-
-JWT token (skimly_token) is stored in localStorage.
-
-### Deployment
-
-This project can be deployed using platforms like Vercel or Netlify (frontend) and Heroku or Railway (backend).
-
-## Live Demo: [Add your deployment link here]
-
-Made by Akshaya S K
+## Made by 
+Akshaya S K
+akshayask176@gmail.com
